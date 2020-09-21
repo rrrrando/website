@@ -1,5 +1,10 @@
 export default {
-    template: '<div><slot v-bind="$data" :addFive="addFive" /></div>',
+    render() {
+        return this.$scopedSlots.default({
+            data: this.$data,
+            addFive: addFive
+        })
+    },
     data() {
         return {
             message: 'Hello World!',

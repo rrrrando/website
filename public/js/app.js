@@ -29268,7 +29268,12 @@ webpackContext.id = "./resources/js/Components sync recursive \\.js$/";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  template: '<div><slot v-bind="$data" :addFive="addFive" /></div>',
+  render() {
+    return this.$scopedSlots.default({
+      data: this.$data,
+      addFive: addFive
+    });
+  },
 
   data() {
     return {
