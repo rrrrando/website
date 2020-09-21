@@ -47395,7 +47395,7 @@ __webpack_require__.r(__webpack_exports__);
     var sum = Object(vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__["ref"])(0);
 
     var addFive = function addFive() {
-      return sum.value = +5;
+      return sum.value = sum.value + 5;
     };
 
     return {
