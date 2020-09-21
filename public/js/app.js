@@ -47390,7 +47390,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.esm-bundler.js */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  setup: function setup() {
+  props: {
+    something: {
+      type: String,
+      "default": ""
+    }
+  },
+  setup: function setup(props) {
     var message = "Hello world";
     var sum = Object(vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__["ref"])(0);
 
@@ -47398,13 +47404,17 @@ __webpack_require__.r(__webpack_exports__);
       return sum.value = sum.value + 5;
     };
 
+    var somethingMore = Object(vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__["computed"])(function () {
+      return props.something + "...";
+    });
     return {
       message: message,
       sum: sum,
-      addFive: addFive
+      addFive: addFive,
+      somethingMore: somethingMore
     };
   },
-  template: "<slot :bla=\"{ message, sum, addFive }\" />"
+  template: "<slot :bla=\"{ message, sum, addFive, something, somethingMore }\" />"
 });
 
 /***/ }),

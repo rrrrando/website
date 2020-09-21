@@ -1,10 +1,17 @@
-import { ref } from "vue/dist/vue.esm-bundler.js";
+import { ref, computed } from "vue/dist/vue.esm-bundler.js";
 export default {
-    setup() {
+    props: {
+        something: {
+            type: String,
+            default: ""
+        }
+    },
+    setup(props) {
         const message = "Hello world";
         const sum = ref(0);
         const addFive = () => (sum.value = sum.value + 5);
-        return { message, sum, addFive };
+        const somethingMore = computed(() => props.something + "...");
+        return { message, sum, addFive, somethingMore };
     },
-    template: `<slot :bla="{ message, sum, addFive }" />`
+    template: `<slot :bla="{ message, sum, addFive, something, somethingMore }" />`
 };

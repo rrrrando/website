@@ -1,5 +1,7 @@
-<my-component v-slot="{ bla }">
-  <span>@{{ bla.message }}</span>
+<my-component v-slot="{ bla }" something="hey">
+  <div>@{{ bla.message }}</div>
   <button @click="bla.addFive">Add</button>
-  <span>@{{ bla.sum }}</span>
+  <div>@{{ bla.sum }}</div>
+  <div>@{{ bla.something }}</div>
+  <div>@{{ bla.somethingMore }}</div>
 </my-component>
