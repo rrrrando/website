@@ -1,5 +1,5 @@
-<my-component #default="{ message, addFive, sum }" >
-            <span>@{{ message }}</span>
-            <button @click="addFive()">Add</button>
-            <span>@{{ sum }}</span>
+<my-component v-slot="{ bla }">
+  <span>@{{ bla.message }}</span>
+  <button @click="bla.addFive">Add</button>
+  <span>@{{ bla.sum }}</span>
 </my-component>
