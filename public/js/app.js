@@ -47387,19 +47387,34 @@ webpackContext.id = "./resources/js/Components sync recursive \\.js$/";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.esm-bundler.js */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  template: '<div><slot v-bind="$data" :addFive="addFive" /></div>',
-  data: function data() {
+  props: {
+    something: {
+      type: String,
+      "default": ""
+    }
+  },
+  setup: function setup(props) {
+    var message = "Hello world";
+    var sum = Object(vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__["ref"])(0);
+
+    var addFive = function addFive() {
+      return sum.value = sum.value + 5;
+    };
+
+    var somethingMore = Object(vue_dist_vue_esm_bundler_js__WEBPACK_IMPORTED_MODULE_0__["computed"])(function () {
+      return props.something + "...";
+    });
     return {
-      message: 'Hello World!',
-      sum: 0
+      message: message,
+      sum: sum,
+      addFive: addFive,
+      somethingMore: somethingMore
     };
   },
-  methods: {
-    addFive: function addFive() {
-      this.sum = this.sum + 5;
-    }
-  }
+  template: "<slot :bla=\"{ message, sum, addFive, something, somethingMore }\" />"
 });
 
 /***/ }),
@@ -47468,7 +47483,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/rando/Sites/website/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/kristjanjansen/projects/laravel/website/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
