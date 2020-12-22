@@ -1,5 +1,5 @@
-import { createApp } from 'vue/dist/vue.esm-bundler.js';
-require('./bootstrap');
+import { createApp } from 'vue';
+
 
 const app = createApp({})
 const files = require.context('./Components', true, /\.js$/i)

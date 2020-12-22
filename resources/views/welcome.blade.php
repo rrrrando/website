@@ -9,8 +9,15 @@
 </head>
 <body>
     <div id="app">
-       <x-message />
+       <x-invoice :data="json_encode([
+          'number' => 1234,
+          'customer' => [
+              'name' => 'Acme',
+              'country' => 'EE'
+          ]
+      ])" />
     </div>
+    <x-input id="2" label="Test" />
     <script src="{{ @mix('js/app.js') }}"></script>
 </body>
 </html>
